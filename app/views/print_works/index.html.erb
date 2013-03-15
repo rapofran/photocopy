@@ -13,7 +13,7 @@
 <% @print_works.each do |print_work| %>
   <tr>
     <td><%= print_work.state %></td>
-    <td><%= print_work.file %></td>
+    <td><%= link_to "Descargar", print_work.file.to_s %></td>
     <td><%= print_work.description %></td>
     <td><%= link_to 'Show', print_work %></td>
     <td><%= link_to 'Edit', edit_print_work_path(print_work) %></td>
