@@ -37,4 +37,7 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+  # relations
+  has_many :print_works
 end

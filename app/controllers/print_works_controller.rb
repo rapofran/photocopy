@@ -1,8 +1,11 @@
 class PrintWorksController < ApplicationController
+  before_filter :get_user
+
   # GET /print_works
   # GET /print_works.json
   def index
-    @print_works = PrintWork.all
+    @print_works = @user.print_works
+    # @print_works = PrintWork.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class PrintWorksController < ApplicationController
   # GET /print_works/1
   # GET /print_works/1.json
   def show
-    @print_work = PrintWork.find(params[:id])
+    @print_work = @user.print_works.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +27,7 @@ class PrintWorksController < ApplicationController
   # GET /print_works/new
   # GET /print_works/new.json
   def new
-    @print_work = PrintWork.new
+    @print_work = @user.print_works.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,14 @@ class PrintWorksController < ApplicationController
 
   # GET /print_works/1/edit
   def edit
-    @print_work = PrintWork.find(params[:id])
+    @print_work = @user.print_works.find(params[:id])
   end
 
   # POST /print_works
   # POST /print_works.json
   def create
-    @print_work = PrintWork.new(params[:print_work])
+    @print_work = @user.print_works.new(params[:print_work])
+    # @print_work.user = current_user
 
     respond_to do |format|
       if @print_work.save
@@ -56,7 +60,7 @@ class PrintWorksController < ApplicationController
   # PUT /print_works/1
   # PUT /print_works/1.json
   def update
-    @print_work = PrintWork.find(params[:id])
+    @print_work = @user.print_works.find(params[:id])
 
     respond_to do |format|
       if @print_work.update_attributes(params[:print_work])
@@ -72,12 +76,18 @@ class PrintWorksController < ApplicationController
   # DELETE /print_works/1
   # DELETE /print_works/1.json
   def destroy
-    @print_work = PrintWork.find(params[:id])
+    @print_work = @user.print_works.find(params[:id])
     @print_work.destroy
 
     respond_to do |format|
       format.html { redirect_to print_works_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def get_user
+    @user = current_user
   end
 end

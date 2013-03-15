@@ -1,7 +1,7 @@
 Photocopy2::Application.routes.draw do
   devise_for :users
 
-  root to: "home#index"
+  root to: "print_works#index"
 
   resources :print_works
 

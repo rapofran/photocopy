@@ -9,6 +9,11 @@ class PrintWork
 
   enumerize :state, in: [:queued, :cancelled, :ready], default: :queued
 
+  # relations
+  belongs_to :user
+
+  # scopes
+
   # validations
   validates_presence_of :file, :state
 end

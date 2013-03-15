@@ -41,3 +41,10 @@ gem 'mongoid', '~> 3.0.0'
 gem 'bson_ext'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
