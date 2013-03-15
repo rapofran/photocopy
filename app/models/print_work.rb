@@ -1,6 +1,6 @@
 class PrintWork
   include Mongoid::Document
-    extend Enumerize
+  extend Enumerize
 
   field :file, type: String
   field :description, type: String

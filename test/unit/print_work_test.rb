@@ -6,6 +6,15 @@ class PrintWorkTest < ActiveSupport::TestCase
 
     assert print_work.invalid?
     assert_present print_work.errors[:file]
-    assert_present print_work.errors[:state]
+  end
+
+  test "new print work should have state set to ready" do
+    print_work = PrintWork.new
+    print_work.file = "pepe"
+
+    print_work.save
+
+    assert print_work.valid?
+    assert_equal "queued", print_work.state
   end
 end
