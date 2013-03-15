@@ -1,0 +1,27 @@
+<h1>Listing print_works</h1>
+
+<table>
+  <tr>
+    <th>State</th>
+    <th>File</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @print_works.each do |print_work| %>
+  <tr>
+    <td><%= print_work.state %></td>
+    <td><%= print_work.file %></td>
+    <td><%= print_work.description %></td>
+    <td><%= link_to 'Show', print_work %></td>
+    <td><%= link_to 'Edit', edit_print_work_path(print_work) %></td>
+    <td><%= link_to 'Destroy', print_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Print work', new_print_work_path %>

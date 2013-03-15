@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>State:</b>
+  <%= @print_work.state %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @print_work.file %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @print_work.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_print_work_path(@print_work) %> |
+<%= link_to 'Back', print_works_path %>
