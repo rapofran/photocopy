@@ -10,7 +10,7 @@ class PrintWorkTest < ActiveSupport::TestCase
 
   test "new print work should have state set to ready" do
     print_work = PrintWork.new
-    print_work.file = "pepe"
+    print_work.file = File.open('Gemfile')
 
     print_work.save
 
