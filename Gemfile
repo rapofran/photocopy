@@ -43,6 +43,8 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'twitter-bootstrap-rails'
+gem 'therubyracer'
 
 group :development do
   gem 'better_errors'

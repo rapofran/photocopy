@@ -1,6 +1,5 @@
-<h1>Editing print_work</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @print_work %> |
-<%= link_to 'Back', print_works_path %>
+<%- model_class = PrintWork -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human %></h1>
+</div>
+<%= render :partial => 'form' %>

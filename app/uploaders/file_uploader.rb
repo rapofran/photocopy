@@ -52,4 +52,8 @@ class FileUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  def name
+    file.path.split("/").last
+  end
+
 end

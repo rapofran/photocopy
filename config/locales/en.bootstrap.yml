@@ -1,0 +1,27 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  helpers:
+    actions: "Acciones"
+    links:
+      back: "Atras"
+      cancel: "Cancelar"
+      confirm: "¿Estas seguro?"
+      destroy: "Eliminar"
+      new: "Nuevo"
+      edit: "Editar"
+    titles:
+      edit: "Editar"
+      save: "Guardar"
+      new: "Nuevo"
+      delete: "Eliminar"
+    models:
+      print_work:
+        index: "Trabajos"
+  enumerize:
+    print_work:
+      state:
+        queued: '<span class="label label-warning">En cola</span>'
+        cancelled: '<span class="label label-important">Cancelado</span>'
+        ready: '<span class="label label-success">Listo</span>'
