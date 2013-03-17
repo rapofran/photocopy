@@ -16,4 +16,5 @@ class PrintWork
 
   # validations
   validates_presence_of :file, :state
+  validates_size_of :file, maximum: 10.megabytes.to_i
 end
