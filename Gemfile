@@ -39,6 +39,7 @@ gem 'jquery-rails'
 gem 'enumerize'
 gem 'mongoid', '~> 3.0.0'
 gem 'bson_ext'
+gem 'mongo_ext'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'devise'
 gem 'omniauth'
@@ -50,3 +51,5 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+gem 'factory_girl_rails'
