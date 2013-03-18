@@ -5,7 +5,6 @@ class PrintWorksController < ApplicationController
   # GET /print_works.json
   def index
     @print_works = @user.print_works
-    # @print_works = PrintWork.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -62,8 +61,7 @@ class PrintWorksController < ApplicationController
   def update
     @print_work = @user.print_works.find(params[:id])
 
-    respond_to do |format|
-      if @print_work.update_attributes(params[:print_work])
+    respond_to do |format|      if @print_work.update_attributes(params[:print_work])
         format.html { redirect_to @print_work, notice: 'Print work was successfully updated.' }
         format.json { head :no_content }
       else

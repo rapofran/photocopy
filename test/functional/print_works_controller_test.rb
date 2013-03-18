@@ -2,6 +2,7 @@ require 'test_helper'
 
 class PrintWorksControllerTest < ActionController::TestCase
   setup do
+    Mongoid.default_session.collections.select {|c| c.name !~ /system/ }.each(&:drop)
     @print_work = FactoryGirl.build(:print_work)
     @user = FactoryGirl.create(:user)
     sign_in @user
@@ -20,10 +21,10 @@ class PrintWorksControllerTest < ActionController::TestCase
 
   test "should create print_work" do
     assert_difference('PrintWork.count') do
-      post :create, print_work: { description: @print_work.description, file: @print_work.file, state: @print_work.state }
+      post :create, print_work: @print_work
     end
 
-    assert_redirected_to print_work_path(assigns(:print_work))
+    assert_redirected_to print_work_path(@print_work.id)
   end
 
   test "should show print_work" do

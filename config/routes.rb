@@ -1,4 +1,15 @@
 Photocopy2::Application.routes.draw do
+  resources :print_work_admin
+  # get "print_work_admin/index"
+
+  # get "print_work_admin/show"
+
+  # delete "print_work_admin/delete"
+
+  # get "print_work_admin/:id/edit"
+
+  # get "print_work_admin/:id/printed"
+
   devise_for :admins
 
   devise_for :users

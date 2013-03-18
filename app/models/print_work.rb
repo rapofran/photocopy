@@ -7,6 +7,9 @@ class PrintWork
   field :description, type: String
   field :state, type: String
 
+  # accesors, prevent setting the state from the print_works users (not admins)
+  attr_accessible :file, :description
+
   enumerize :state, in: [:queued, :cancelled, :ready], default: :queued
 
   # relations
@@ -38,5 +41,15 @@ class PrintWork
 
   def queued?
     self.state == "queued"
+  end
+
+  def update_state(params)
+    if params[:state] == "ready"
+      self.ready
+    else
+      self.cancel
+    end
+
+    self.save
   end
 end
