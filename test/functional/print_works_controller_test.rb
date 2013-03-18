@@ -3,7 +3,7 @@ require 'test_helper'
 class PrintWorksControllerTest < ActionController::TestCase
   setup do
     @print_work = FactoryGirl.build(:print_work)
-    @user = FactoryGirl.build(:user)
+    @user = FactoryGirl.create(:user)
     sign_in @user
   end
 
