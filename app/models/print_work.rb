@@ -17,7 +17,7 @@ class PrintWork
   validates_size_of :file, maximum: 10.megabytes.to_i
 
   def cancel
-    self.state = :cancelled unless self.cancelled?
+    self.state = "cancelled" unless self.cancelled?
   end
 
   def cancelled?
@@ -25,7 +25,7 @@ class PrintWork
   end
 
   def ready
-    self.state = :ready unless self.ready?
+    self.state = "ready" unless self.ready?
   end
 
   def ready?
@@ -33,7 +33,7 @@ class PrintWork
   end
 
   def queued
-    self.state = :queued unless self.queued?
+    self.state = "queued" unless self.queued?
   end
 
   def queued?

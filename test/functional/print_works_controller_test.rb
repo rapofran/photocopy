@@ -2,7 +2,9 @@ require 'test_helper'
 
 class PrintWorksControllerTest < ActionController::TestCase
   setup do
-    @print_work = print_works(:one)
+    @print_work = FactoryGirl.build(:print_work)
+    @user = FactoryGirl.build(:user)
+    sign_in @user
   end
 
   test "should get index" do

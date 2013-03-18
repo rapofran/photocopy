@@ -23,16 +23,19 @@
               </ul>
             </div><!--/.well -->
           </div><!--/span-->
-    <% end %>
         <div class="span10">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
       </div><!--/row-->
-
        <%= render 'layouts/footer' %>
-    </div> <!-- /container -->
-
+      </div> <!-- /container -->
+    <% else %>
+      <div>
+        <%= bootstrap_flash %>
+        <%= yield %>
+      </div>
+    <% end %>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
