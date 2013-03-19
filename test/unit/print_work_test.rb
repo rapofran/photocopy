@@ -14,7 +14,7 @@ class PrintWorkTest < ActiveSupport::TestCase
 
   test "new print work should have state set to queued" do
     @print_work.save
-
+    
     assert @print_work.valid?
     assert_equal "queued", @print_work.state
   end

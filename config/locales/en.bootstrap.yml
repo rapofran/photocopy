@@ -19,6 +19,7 @@ en:
     models:
       print_work:
         index: "Trabajos"
+        printed: "Marcar como impreso"
   enumerize:
     print_work:
       state:

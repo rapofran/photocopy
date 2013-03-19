@@ -7,6 +7,9 @@ class PrintWork
   field :description, type: String
   field :state, type: String
 
+  # accesors, prevent setting the state from the print_works users (not admins)
+  attr_accessible :file, :description
+
   enumerize :state, in: [:queued, :cancelled, :ready], default: :queued
 
   # accesors, prevent setting the state from the print_works users (not admins)
