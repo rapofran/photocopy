@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PrintWorkTest < ActiveSupport::TestCase
   setup do
-     @print_work = FactoryGirl.build(:print_work)
+    @print_work = FactoryGirl.build(:print_work)
   end
 
   test "print_work attributes must not be empty" do
@@ -12,7 +12,7 @@ class PrintWorkTest < ActiveSupport::TestCase
     assert_present print_work.errors[:file]
   end
 
-  test "new print work should have state set to ready" do
+  test "new print work should have state set to queued" do
     @print_work.save
 
     assert @print_work.valid?

@@ -9,6 +9,9 @@ class PrintWork
 
   enumerize :state, in: [:queued, :cancelled, :ready], default: :queued
 
+  # accesors, prevent setting the state from the print_works users (not admins)
+  attr_accessible :file, :description
+
   # relations
   belongs_to :user
 
@@ -38,5 +41,15 @@ class PrintWork
 
   def queued?
     self.state == "queued"
+  end
+
+  def update_state(params)
+    if params[:state] == "ready"
+      self.ready
+    else
+      self.cancel
+    end
+
+    self.save
   end
 end
