@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @print_work.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
-  <dd><%= @print_work.state %></dd>
+  <dd><%= raw @print_work.state.text %></dd>
 </dl>
 
 <div class="form-actions">
