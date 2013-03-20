@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
   end
 
   def new
-
+    redirect_to '/users/auth/facebook'
   end
 end
