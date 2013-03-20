@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    sign_out
+    raise "pepe"
     redirect_to root_url
+  end
+
+  def new
+
   end
 end

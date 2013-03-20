@@ -14,7 +14,7 @@
         <ul class="nav pull-right">
             <li>
               <% if user_signed_in? %>
-                <%= link_to "Cerrar sesión " + current_user.email, destroy_user_session_path, :method => :delete %>
+                <%= link_to "Cerrar sesión " + current_user.email, destroy_user_session_path %>
               <% else %>
                 <%= link_to "Iniciar sesión", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
               <% end %>

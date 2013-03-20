@@ -43,7 +43,7 @@ gem 'mongo_ext'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 

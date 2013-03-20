@@ -218,6 +218,8 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, '470807482986156', '0e7b31492fcf6d2ada78e4692dbb22b0'
 
+  OmniAuth.config.full_host = 'http://localhost:3000/' # ES CLAVE !
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
