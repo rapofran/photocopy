@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    raise "pepe"
     redirect_to root_url
   end
 
