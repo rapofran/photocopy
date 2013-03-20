@@ -35,4 +35,8 @@ class User
     end
     user
   end
+
+  def count_print_works_queued
+    PrintWork.where(user: self).count
+  end
 end

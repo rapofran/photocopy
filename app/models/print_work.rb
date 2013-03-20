@@ -21,4 +21,11 @@ class PrintWork
   # validations
   validates_presence_of :file, :state
   validates_size_of :file, maximum: 10.megabytes.to_i
+  validate :file, :validate_count_for_user
+
+  def validate_count_for_user
+    if user.count_print_works_queued > 1
+      errors.add(:file, "Ya tenes mas de 2 archivos encolados. No podes subir mas")
+    end
+  end
 end
