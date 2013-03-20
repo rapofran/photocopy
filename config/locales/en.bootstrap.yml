@@ -26,3 +26,8 @@ en:
         queued: '<span class="label label-warning">En cola</span>'
         cancelled: '<span class="label label-important">Cancelado</span>'
         ready: '<span class="label label-success">Listo</span>'
+  models:
+    print_work:
+      file: "Archivo"
+      descriptcion: "Descripción"
+      state: "Estado"
