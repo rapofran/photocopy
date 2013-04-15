@@ -1,4 +1,16 @@
 <%= form_for @print_work, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @print_work.errors.any? %>
+    <div class="alert alert-error">
+      <h2><%= pluralize(@print_work.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @print_work.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <div class="control-group">
     <%= f.label :file, :class => 'control-label' %>
     <div class="controls">
