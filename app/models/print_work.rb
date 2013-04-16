@@ -21,7 +21,7 @@ class PrintWork
   validate :file, :validate_count_for_user
 
   def validate_count_for_user
-    if user.count_print_works_queued > 1
+    if PrintWork.where(user: user).count > 1
       errors.add(:file, "Ya tenes mas de 2 archivos encolados. No podes subir mas")
     end
   end

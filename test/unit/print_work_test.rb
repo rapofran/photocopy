@@ -1,34 +1,28 @@
 require 'test_helper'
 
-class PrintWorkTest < ActiveSupport::TestCase
-  setup do
-    @print_work = FactoryGirl.build(:print_work)
-  end
+describe PrintWork do
+  describe "save!" do
+    let (:print_work) { build(:print_work) }
+     
+    describe "when does not have a file" do
+      let (:print_work) { build(:print_work, file: nil) }
+      it "fails" do
+        print_work.wont_be :valid?
+      end
+    end
 
-  test "print_work attributes must not be empty" do
-    print_work = PrintWork.new
+    describe "when has a file" do
+      it "succeds" do
+        print_work.must_be :valid?      
+      end
+    end
 
-    assert print_work.invalid?
-    assert_present print_work.errors[:file]
-  end
-
-  test "new print work should have state set to queued" do
-    @print_work.save
-    
-    assert @print_work.valid?
-    assert_equal "queued", @print_work.state
-  end
-
-  test "getters of state should return valid states" do
-    assert_equal "queued", @print_work.state
-    assert @print_work.queued?
-
-    @print_work.ready
-    assert_equal "ready", @print_work.state
-    assert @print_work.ready?
-
-    @print_work.cancel
-    assert_equal "cancelled", @print_work.state
-    assert @print_work.cancelled?
+    describe "only accepts two files per user" do
+      let (:user) { build(:user) }
+      it "fails" do
+        skip "TO-DO: push diferent print_works objects"
+        user.print_works << print_work
+      end
+    end
   end
 end

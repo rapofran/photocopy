@@ -52,5 +52,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem 'factory_girl_rails'
-gem 'minitest-rails'
+group :test do
+  gem 'minitest-spec-rails'
+  gem 'factory_girl_rails'
+  gem 'minitest-rails'
+end
