@@ -61,7 +61,10 @@ class PrintWorksController < ApplicationController
   def update
     @print_work = @user.print_works.find(params[:id])
 
-    respond_to do |format|      if @print_work.update_attributes(params[:print_work])
+    raise params.to_yaml
+
+    respond_to do |format|      
+      if @print_work.update_attributes(params[:print_work])
         format.html { redirect_to @print_work, notice: 'Print work was successfully updated.' }
         format.json { head :no_content }
       else
