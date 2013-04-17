@@ -17,11 +17,17 @@ describe PrintWork do
       end
     end
 
-    describe "only accepts two files per user" do
-      let (:user) { build(:user) }
+    describe "more than two files per user" do
+      let (:user) { create(:user) }
       it "fails" do
-        skip "TO-DO: push diferent print_works objects"
-        user.print_works << print_work
+        assert_raise Mongoid::Errors::Validations do
+          p = user.print_works.create file: File.open('README.rdoc')
+          p.save!
+          p = user.print_works.create file: File.open('README.rdoc')
+          p.save!
+          p = user.print_works.create file: File.open('README.rdoc')
+          p.save!
+        end
       end
     end
   end
