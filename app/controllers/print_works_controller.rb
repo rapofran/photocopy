@@ -61,7 +61,7 @@ class PrintWorksController < ApplicationController
   def update
     @print_work = @user.print_works.find(params[:id])
 
-    raise params.to_yaml
+    # raise params.to_yaml
 
     respond_to do |format|      
       if @print_work.update_attributes(params[:print_work])
