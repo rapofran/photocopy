@@ -47,6 +47,7 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'unicorn'
+gem 'thin'
 
 group :development do
   gem 'better_errors'
